@@ -15,6 +15,13 @@ public class LinkedList<T> {
 			tail = newNode;
 		}
 	}
+	public T pop() {
+		if (head == null)
+			return null;
+		T popData = head.data;
+		head = head.next;
+		return popData;
+	}
 
 	public void show() {
 		Node<T> temp = head;
@@ -23,27 +30,6 @@ public class LinkedList<T> {
 			temp = temp.next;
 		}
 		System.out.println();
-	}
-
-	public Node<T> search(T searchData) {
-		Node<T> temp = head;
-		while (temp != null) {
-			if (temp.data.equals(searchData))
-				return temp;
-			temp = temp.next;
-		}
-		return null;
-	}
-
-	public boolean insertAfter(T searchData, T insertData) {
-		Node<T> newNode = new Node<>(insertData);
-		Node<T> searchedNode = search(searchData);
-		if (searchedNode != null) {
-			newNode.next = searchedNode.next;
-			searchedNode.next = newNode;
-			return true;
-		}
-		return false;
 	}
 
 }
