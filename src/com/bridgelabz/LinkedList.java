@@ -23,21 +23,31 @@ public class LinkedList<T> {
 //		return popData;
 //	}
 
-	public T popLast() {
-		if (head == null)
-			return null;
-		T popData = tail.data;
-		if (head == tail) {
-			head = null;
-			return popData;
-		}
+//	public T popLast() {
+//		if (head == null)
+//			return null;
+//		T popData = tail.data;
+//		if (head == tail) {
+//			head = null;
+//			return popData;
+//		}
+//		Node<T> temp = head;
+//		while (temp.next != tail) {
+//			temp = temp.next;
+//		}
+//		temp.next = null;
+//		tail = temp;
+//		return popData;
+//	}
+
+	public Node<T> search(T searchData) {
 		Node<T> temp = head;
-		while (temp.next != tail) {
+		while (temp != null) {
+			if (temp.data.equals(searchData))
+				return temp;
 			temp = temp.next;
 		}
-		temp.next = null;
-		tail = temp;
-		return popData;
+		return null;
 	}
 
 	public void show() {
