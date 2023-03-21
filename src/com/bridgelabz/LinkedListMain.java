@@ -2,16 +2,13 @@ package com.bridgelabz;
 
 public class LinkedListMain {
 	public static void main(String[] args) {
-		LinkedList list = new LinkedList();
-		list.add(56);
-		list.add(30);
-		list.add(70);
+		LinkedList<Integer> linkedList1 = new LinkedList<>();
+		linkedList1.push(70);
+		linkedList1.push(30);
+		linkedList1.push(56);
 
-		Node currentNode = list.head;
-		while (currentNode != null) {
-			System.out.print(currentNode.data + " ");
-			currentNode = currentNode.next;
-			
+		linkedList1.show();
+
 		}
 	}
-}
+
