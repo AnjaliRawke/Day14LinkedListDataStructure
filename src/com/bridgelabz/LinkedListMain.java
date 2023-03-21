@@ -4,16 +4,16 @@ public class LinkedListMain {
 	public static void main(String[] args) {
 		LinkedList<Integer> linkedList1 = new LinkedList<>();
 		linkedList1.append(56);
+		linkedList1.append(30);
 		linkedList1.append(70);
 
-		boolean isInserted = linkedList1.insertAfter(56, 30);
-		if (isInserted)
-			System.out.println("Element inserted successfully!");
+		Integer poppedData1 = linkedList1.pop();
+		if (poppedData1 == null)
+			System.out.println("Linked List is Empty");
 		else
-			System.out.println("Element not inserted!");
+			System.out.println("The element popped is => " + poppedData1);
+
 		linkedList1.show();
-
-
-		}
+	}
 	}
 
