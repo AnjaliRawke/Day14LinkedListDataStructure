@@ -15,6 +15,7 @@ public class LinkedList<T> {
 			tail = newNode;
 		}
 	}
+	
 //	public T pop() {
 //		if (head == null)
 //			return null;
