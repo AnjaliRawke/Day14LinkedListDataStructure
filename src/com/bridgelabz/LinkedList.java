@@ -14,7 +14,15 @@ public class LinkedList<T> {
 			tail.next = newNode;
 			tail = newNode;
 		}
-	}
+
+		Node currentNode = this.head;
+		while (currentNode.next != null) {
+			currentNode = currentNode.next;
+		}
+
+		currentNode.next = newNode;
+
+}
 
 //	public T pop() {
 //		if (head == null)
@@ -24,22 +32,22 @@ public class LinkedList<T> {
 //		return popData;
 //	}
 
-//	public T popLast() {
-//		if (head == null)
-//			return null;
-//		T popData = tail.data;
-//		if (head == tail) {
-//			head = null;
-//			return popData;
-//		}
-//		Node<T> temp = head;
-//		while (temp.next != tail) {
-//			temp = temp.next;
-//		}
-//		temp.next = null;
-//		tail = temp;
-//		return popData;
-//	}
+	public T popLast() {
+		if (head == null)
+			return null;
+		T popData = tail.data;
+		if (head == tail) {
+			head = null;
+			return popData;
+		}
+		Node<T> temp = head;
+		while (temp.next != tail) {
+			temp = temp.next;
+		}
+		temp.next = null;
+		tail = temp;
+		return popData;
+	}
 
 	public Node<T> search(T searchData) {
 		Node<T> temp = head;
@@ -51,21 +59,22 @@ public class LinkedList<T> {
 		return null;
 	}
 
-	public boolean insertAfter(T searchData, T insertData) {
-		Node<T> newNode = new Node<>(insertData);
-		Node<T> searchedNode = search(searchData);
-		if (searchedNode != null) {
-			newNode.next = searchedNode.next;
-			searchedNode.next = newNode;
-			return true;
-		}
-		return false;
-	}
+
+//	public boolean insertAfter(T searchData, T insertData) {
+//		Node<T> newNode = new Node<>(insertData);
+//		Node<T> searchedNode = search(searchData);
+//		if (searchedNode != null) {
+//			newNode.next = searchedNode.next;
+//			searchedNode.next = newNode;
+//			return true;
+//		}
+//		return false;
+//	}
 
 	public void show() {
 		Node<T> temp = head;
 		while (temp != null) {
-			System.out.print(temp.data + " -> ");
+			System.out.print(temp.getData() + " -> ");
 			temp = temp.next;
 		}
 		System.out.println();
