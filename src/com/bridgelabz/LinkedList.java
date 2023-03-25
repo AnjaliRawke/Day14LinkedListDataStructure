@@ -71,6 +71,7 @@ public class LinkedList<T> {
 //		return false;
 //	}
 
+
 	public void show() {
 		Node<T> temp = head;
 		while (temp != null) {
